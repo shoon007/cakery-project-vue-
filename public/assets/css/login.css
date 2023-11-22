@@ -1,0 +1,186 @@
+section.forms {
+    padding-top: 1rem;
+    max-width: 99rem;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section.forms .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem auto;
+    width: 450px;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 0 2rem 3rem rgba(66, 53, 40, 0.18);
+    border-radius: 8px;
+    padding: 1rem 2rem 2rem;
+}
+
+section.forms .login .btn {
+    padding: 8px 50px;
+    font-size: 20px;
+    margin: 10px 4px;
+    color: #191512;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: default;
+}
+
+section.forms .login span,
+section.forms .login a {
+    color: #191512;
+}
+
+section.forms .login span:hover {
+    color: #191512;
+}
+
+section.forms .login span:hover a {
+    text-decoration: underline solid #191512;
+    cursor: pointer;
+    color: #191512;
+}
+
+section.forms .login .btn::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    width: 100%;
+    height: 1.2px;
+    background: #191512;
+    display: block;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+}
+
+section.forms .login .btn:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+section.forms .inputBox {
+    position: relative;
+    width: 250px;
+}
+
+section.forms .inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+}
+
+section.forms .inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+}
+
+section.forms .inputBox input:valid~span,
+section.forms .inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+}
+
+section.forms .inputBox input:valid,
+section.forms .inputBox input:focus {
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+section.forms .login small.error {
+    font-size: 16px;
+    color: red;
+}
+
+section.forms .enter {
+    --background: #000;
+    --text: #fff;
+    --font-size: 15px;
+    --duration: 0.44s;
+    --move-hover: -4px;
+    --font-shadow: var(--font-size);
+    padding: 16px 32px;
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: var(--font-size);
+    border-radius: 5px;
+    border: 2px solid #000;
+    display: block;
+    outline: none;
+    text-decoration: none;
+    font-size: var(--font-size);
+    letter-spacing: 0.5px;
+    background: var(--background);
+    color: var(--text);
+    transform: translateY(var(--y)) translateZ(0);
+    transition: transform var(--duration) ease;
+}
+
+section.forms .enter div {
+    display: flex;
+    overflow: hidden;
+    text-shadow: 0 var(--font-shadow) 0 var(--text);
+}
+
+section.forms .enter div span {
+    display: block;
+    backface-visibility: hidden;
+    font-style: normal;
+    transition: transform var(--duration) ease;
+    transform: translateY(var(--m)) translateZ(0);
+}
+
+section.forms .enter:hover {
+    --y: var(--move-hover);
+}
+
+section.forms .enter:hover span {
+    --m: calc(var(--font-size) * -1);
+}
+
+section.forms .enter:active {
+    --y: 0px;
+}
+
+@media screen and (max-width: 768px) {
+    section.forms .login {
+        width: 96%;
+    }
+}

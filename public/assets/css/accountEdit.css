@@ -1,0 +1,585 @@
+.alert-box {
+    max-width: 50%;
+    margin: 0rem auto;
+    margin-top: 1rem;
+}
+
+.alert-box p {
+    padding: 1rem;
+    background-color: rgba(247, 247, 247, 0.07);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+}
+
+#img-preview {
+    width: 155px;
+    height: 155px;
+    border: 2px dashed #191512;
+    margin-bottom: 20px;
+}
+
+#img-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+[type="file"] {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+section.edit-account {
+    padding: 6rem 2rem;
+    max-width: 99rem;
+    margin: 0rem auto;
+}
+
+section.edit-account form {
+    width: 60%;
+    margin: auto;
+    background-color: rgb(219, 218, 218);
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.18);
+}
+
+section.edit-account .account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.buttonDownload {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    background: #191512;
+    color: #fff;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+    border-radius: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.buttonDownload:hover {
+    background-color: white;
+    color: #3e2415;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+.buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 1px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+    border-color: #3e2415;
+}
+
+.buttonDownload:hover:after {
+    border-top-color: #3e2415;
+    animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+    0% {
+        margin-top: -7px;
+        opacity: 1;
+    }
+    0.001% {
+        margin-top: -15px;
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        margin-top: 0;
+        opacity: 0.4;
+    }
+}
+
+.buttons-container .delete-button {
+    --main-focus: #2d8cf0;
+    --font-color: #323232;
+    --bg-color-sub: #dedede;
+    --bg-color: #eee;
+    --main-color: #323232;
+    position: relative;
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 30px;
+    overflow: hidden;
+    margin-left: 0.5rem;
+}
+
+.buttons-container .delete-button,
+.buttons-container .delete-button__icon,
+.buttons-container .delete-button__text {
+    transition: all 0.3s;
+}
+
+.buttons-container .delete-button .delete-button__text {
+    transform: translateX(33px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.buttons-container .delete-button .delete-button__icon {
+    position: absolute;
+    transform: translateX(89px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-container .delete-button .svg {
+    width: 20px;
+    fill: var(--main-color);
+}
+
+.buttons-container .delete-button:hover {
+    background: var(--bg-color);
+}
+
+.buttons-container .delete-button:hover .delete-button__text {
+    color: transparent;
+}
+
+.buttons-container .delete-button:hover .delete-button__icon {
+    width: 128px;
+    transform: translateX(0);
+}
+
+.buttons-container .delete-button:active {
+    opacity: 0.5;
+}
+
+section.edit-account .account-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.edit-account .account-info .input-container {
+    position: relative;
+    margin: 2.2rem auto;
+}
+
+section.edit-account .account-info .input {
+    padding: 10px;
+    height: 40px;
+    border: 2px solid #191512;
+    border-top: none;
+    border-bottom: none;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #191512;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input:focus {
+    box-shadow: none;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input:focus::placeholder {
+    opacity: 0;
+}
+
+.label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #191512;
+    transition: all 0.5s;
+    transform: scale(0);
+}
+
+section.edit-account .account-info .input-container .topline {
+    position: absolute;
+    content: "";
+    background-color: #191512;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    top: 0;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input-container input:focus~.topline {
+    width: 35%;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input-container .underline {
+    position: absolute;
+    content: "";
+    background-color: #191512;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input-container input:focus~.underline {
+    width: 100%;
+    transition: all 0.5s;
+}
+
+section.edit-account .account-info .input-container input:focus~.label {
+    top: -10px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+:root {
+    --loading-grey: #ededed;
+}
+
+.profile-edit {
+    font-family: Helvetica;
+    font-size: 15px;
+    width: 60%;
+    padding: 0rem;
+    margin: 0rem auto 0rem auto;
+    height: 540px;
+}
+
+.profile-edit .postcard {
+    width: 60%;
+    padding-top: 1.6rem;
+    margin: auto;
+    background-color: rgb(219, 218, 218);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.profile-edit .image {
+    height: 155px;
+    width: 155px;
+    border-radius: 0.5rem;
+    margin: 1rem auto 2rem auto;
+}
+
+.profile-edit .profile-container .image {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: 2px solid #bdb2a7;
+}
+
+.profile-edit .image img,
+.profile-edit .profile-container .image img {
+    display: block;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.profile-edit .content {
+    padding: 0rem;
+}
+
+.profile-edit .content h4:first-child,
+.profile-edit .content h4:last-child {
+    width: 170px;
+    border-radius: 3rem;
+}
+
+.profile-edit .content h4 {
+    margin: 0 auto 3rem auto;
+    font-size: 1.5rem;
+    width: 220px;
+    height: 2.9rem;
+}
+
+.profile-edit .content .buttons-container h4.row,
+.profile-edit .content .buttons-container h4.row {
+    margin: 0rem 0.5rem 2.5rem 0.5rem;
+    width: 140px;
+    height: 2.7rem;
+}
+
+.profile-edit .loading {
+    width: 100%;
+    margin: 0rem;
+}
+
+.profile-edit .loading .image,
+.profile-edit .profile-container .image,
+.profile-edit .loading h4,
+.profile-edit stcard-container .loading .description {
+    background-color: var(--loading-grey);
+    background: linear-gradient( 100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 60%) var(--loading-grey);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
+
+.profile-edit .loading h4 {
+    min-height: 1.6rem;
+    border-radius: 0.5rem;
+    animation-delay: 0.05s;
+}
+
+.profile-edit .loading .description {
+    min-height: 3.2rem;
+    width: 160px;
+    margin: auto;
+    border-radius: 1.5rem;
+    animation-delay: 0.06s;
+}
+
+section.edit-account form .btn {
+    width: 140px;
+    height: 50px;
+    background: linear-gradient(to top, #191512, #3e2415, #3f291c);
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+section.edit-account form .btn:active {
+    box-shadow: none;
+}
+
+section.edit-account form .btn span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: top 0.5s;
+}
+
+section.edit-account form .btn-text-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+section.edit-account form .btn-text-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+section.edit-account form .btn:hover .btn-text-one {
+    top: -100%;
+}
+
+section.edit-account form .btn:hover .btn-text-two {
+    top: 50%;
+}
+
+section.edit-account .title-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.edit-account .title {
+    margin-bottom: 2.2rem;
+    font-size: 24px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+section.edit-account .title:focus,
+section.edit-account .title:hover {
+    color: #fff;
+}
+
+section.edit-account .title:focus:after,
+section.edit-account .title:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+section.edit-account .title:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+section.edit-account .validationMessage {
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1012px) {
+    section.edit-account .account-info {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .alert-box {
+        max-width: 90%;
+        margin: 0rem auto;
+    }
+    .profile-edit .image {
+        width: 90px;
+        height: 90px;
+    }
+    #img-preview {
+        width: 90px;
+        height: 90px;
+        border: 1px dashed #191512;
+    }
+    section.edit-account {
+        padding: 6rem 2rem;
+        max-width: 99rem;
+        margin: auto;
+    }
+    section.edit-account form {
+        width: 100%;
+    }
+    .profile-edit {
+        width: 98%;
+    }
+    .profile-edit .content h4:first-child,
+    .profile-edit .content h4:last-child {
+        width: 120px;
+    }
+    .profile-edit .content h4 {
+        font-size: 0.6rem;
+        width: 170px;
+        height: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .profile-edit .content .buttons-container {
+        margin: 0rem;
+    }
+    .profile-edit .content .buttons-container h4.row,
+    .profile-edit .content .buttons-container h4.row {
+        height: 2rem;
+        width: 110px;
+        margin-bottom: 1.5rem;
+    }
+    .buttons-container {
+        flex-direction: column;
+    }
+    .buttonDownload {
+        padding: 6px 15px;
+        font-size: 0.6em;
+        text-indent: 12px;
+        border-radius: 2em;
+        margin-right: 0rem;
+    }
+    .buttons-container .delete-button {
+        width: 90px;
+        height: 24px;
+        margin-left: 0rem;
+        margin-top: 1.5rem;
+    }
+    .buttons-container .delete-button .delete-button__text {
+        font-size: 0.6rem;
+    }
+    .buttons-container .delete-button .delete-button__icon {
+        transform: translateX(70px);
+        height: 100%;
+        width: 16px;
+    }
+    .buttons-container .delete-button:hover .delete-button__icon {
+        width: 88px;
+        transform: translateX(0);
+    }
+    section.edit-account .account-info .input {
+        padding: 4px;
+        height: 27px;
+        font-size: 10px;
+    }
+    section.edit-account form .btn {
+        width: 100px;
+        height: 30px;
+    }
+    section.edit-account form .btn span {
+        font-size: 10px;
+    }
+}
